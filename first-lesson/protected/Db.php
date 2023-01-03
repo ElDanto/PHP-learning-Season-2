@@ -13,7 +13,7 @@ class Db
         // $data = $sth->fetchAll(PDO::FETCH_ASSOC);
         $data = $sth->fetchAll(PDO::FETCH_CLASS, $class);
 
-        var_dump($data);
+        // var_dump($data);
         // die;
         // $data = $this->dbh->query($sql, PDO::FETCH_ASSOC);
         // $ret = [];
