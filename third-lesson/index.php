@@ -11,7 +11,6 @@ $path = __DIR__ . '/templates';
 if ( empty( $_GET ) ) {
     $articles = Article::getLastNews(3);
     $view->articles = $articles;
-    $view->articles = $articles;
     var_dump( count( $view ) );
 
     $path .= '/news.php';
