@@ -59,7 +59,7 @@ abstract class Model
 
         $result = $db->execute($sql, $values);
         
-        if ( $result ) {
+        if ($result) {
             $this->id = $db->lastInsertId();
             return $result;
         } else {
@@ -69,7 +69,7 @@ abstract class Model
 
     }
 
-    public function update( $id )
+    public function update($id)
     {
 
         $db = new Db();

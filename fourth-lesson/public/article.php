@@ -6,9 +6,9 @@ use App\Models\Article;
 
 $view = new View;
 
-if ( isset( $_GET['article_id'] ) && !empty( $_GET['article_id'] ) ) {
+if (isset($_GET['article_id']) && !empty($_GET['article_id'])) {
     $newsContrller = new \App\Controllers\News();
-    $newsContrller->action( 'One' );
+    $newsContrller->action('One');
 
 } 
 

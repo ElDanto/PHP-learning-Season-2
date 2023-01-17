@@ -35,7 +35,7 @@ $res = $article->create($args);
 
 // $db = new Db();
 // var_dump(Product::class);
-// var_dump($db->query('SELECT * FROM `products`', Product::class ));
+// var_dump($db->query('SELECT * FROM `products`', Product::class));
 
 
 // 1. В качестве основы своего проекта возьмите то, что сделано нами 

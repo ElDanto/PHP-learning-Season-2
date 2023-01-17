@@ -9,9 +9,9 @@ $authors = $data['authors']
     <label for="author-id">Author ID</label>
     <select name="author_id">
         <option selected value="<?php echo $article->author_id; ?>"><?php echo $article->author_id . ': ' . $article->author; ?></option>
-        <?php foreach ( $authors as $author ) : ?>
+        <?php foreach ($authors as $author) : ?>
             <?php 
-                if ( $author->id == $article->author_id ) {
+                if ($author->id == $article->author_id) {
                     continue;
                 }
             ?>

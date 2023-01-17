@@ -21,11 +21,11 @@ class Article
         return $result;
     }
 
-    public function __get( string $key )
+    public function __get(string $key)
     {
         if ($key == 'author') {
-            if ( !empty( $this->author_id ) ) {
-                $author = Author::findById( $this->author_id );
+            if (!empty($this->author_id)) {
+                $author = Author::findById($this->author_id);
                 return $author[0]->name;
             }
         }

@@ -7,12 +7,12 @@ trait IteratorTrait
 
     public function current()
     {
-        return current( $this->data );
+        return current($this->data);
     }
 
     public function key()
     {
-       return key( $this->data );
+       return key($this->data);
     }
 
     public function next() : void

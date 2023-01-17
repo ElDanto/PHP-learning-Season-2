@@ -7,18 +7,18 @@ use App\Models\Article;
 
 
 $uri = $_SERVER['REQUEST_URI'];
-$parts = explode( '/', $uri );
+$parts = explode('/', $uri);
 
 $controllerClass = '\App\Controllers\\' . $parts[3];
 
 $controller = new $controllerClass;
-$actionName = !empty( $parts[4] ) ? $parts[4] : 'Default';
-$controller->action( $actionName );
+$actionName = !empty($parts[4]) ? $parts[4] : 'Default';
+$controller->action($actionName);
 
 session_start();
 var_dump($_SESSION);
 // $newsContrller = new \App\Controllers\News();
-// $newsContrller->action( 'Default' );
+// $newsContrller->action('Default');
 
 
 // $view = new View;
@@ -28,7 +28,7 @@ var_dump($_SESSION);
 // $articles = Article::getLastNews(3);
 // $view->articles = $articles;
 
-// var_dump( count( $view ) ); //Example interface Countable
+// var_dump(count($view)); //Example interface Countable
 
 //Example interface Iterator
 // foreach ($view as $key => $value) {

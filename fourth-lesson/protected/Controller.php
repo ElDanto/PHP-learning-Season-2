@@ -14,18 +14,18 @@ abstract class Controller
 
     }
 
-    public function access( $action )
+    public function access($action)
     {
        return true;
     }
 
-    public function action( $name )
+    public function action($name)
     {   
-        if ( $this->access( $name ) ) {
+        if ($this->access($name)) {
             $methodName = 'action' . $name;
             $this->$methodName();
         } else {
-            die( 'Access denied!' );
+            die('Access denied!');
         }
         
     }

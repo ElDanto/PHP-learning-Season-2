@@ -7,7 +7,7 @@ $authors = $data['authors'];
     <label for="author-id">Author ID</label>
     <select name="author_id" required>
         <option selected disabled>Author ID</option>
-        <?php foreach ( $authors as $author ) : ?>
+        <?php foreach ($authors as $author) : ?>
             <option value="<?php echo $author->id; ?>"><?php echo $author->id . ': ' . $author->name; ?></option>
         <?php endforeach; ?>
     </select>

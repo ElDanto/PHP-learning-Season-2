@@ -40,9 +40,9 @@ class Admin
 
     public function actionStatus()
     {
-        if ( isset( $_GET['status'] ) || empty( $_GET['status'] ) ) {
+        if (isset($_GET['status']) || empty($_GET['status'])) {
             $status = [];
-            switch ( $_GET['status'] ) {
+            switch ($_GET['status']) {
                 case 'success':
                     $status['statusColor'] = 'green';
                     $status['statusMessage'] = 'Action completed successfully';
@@ -54,7 +54,7 @@ class Admin
 
             }
             $this->view->status = $status;
-            $this->view->display( __DIR__ . '/../../templates/adminStatus.php' );
+            $this->view->display(__DIR__ . '/../../templates/adminStatus.php');
         }
         $this->actionDefault();
         

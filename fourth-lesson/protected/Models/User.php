@@ -12,7 +12,7 @@ class User
     public $email;
     public $password;
 
-    public static function findByEmail( string $email )
+    public static function findByEmail(string $email)
     {
         $sql = 'SELECT * FROM ' . self::$table . ' WHERE email LIKE \'' . $email . '\'';
         $db = new Db();

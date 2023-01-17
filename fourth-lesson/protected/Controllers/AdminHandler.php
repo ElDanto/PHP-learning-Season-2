@@ -12,7 +12,7 @@ use App\Controllers\Auth;
 class AdminHandler
     extends Controller
 {
-    public function access( $action )
+    public function access($action)
     {
         return Auth::checkAdmin();
     }
@@ -27,16 +27,16 @@ class AdminHandler
 
         $article = new Article();
 
-        if ( !empty( $_POST ) ) {
-            foreach ( $_POST as $key => $value ) {
-                if ( empty($value) ) {
+        if (!empty($_POST)) {
+            foreach ($_POST as $key => $value) {
+                if (empty($value)) {
                     $value = $defaultPettens[$key];
                 }
                 $article->$key = $value;
             }
         }
 
-        if ( $article->save() ) {
+        if ($article->save()) {
             header('Location: http://learn-php2.local/fourth-lesson/public/Admin/Status/?status=success');
             exit;
         } else {
@@ -47,21 +47,21 @@ class AdminHandler
 
     protected function actionUpdate()
     {
-        if( !isset( $_GET['id'] ) || empty( $_GET['id'] ) ){
+        if(!isset($_GET['id']) || empty($_GET['id'])){
             header('Location: http://learn-php2.local/fourth-lesson/public/Admin/Status/?status=error');
             exit;
         }
 
-        $article = Article::findById( $_GET['id'] );
+        $article = Article::findById($_GET['id']);
         $article = $article[0];
 
-        if( !empty( $_POST ) ) {
+        if(!empty($_POST)) {
             foreach ($_POST as $key => $value) {
                 $article->$key = $value;
             }
         }
 
-        if ( $article->save() ) {
+        if ($article->save()) {
             header('Location: http://learn-php2.local/fourth-lesson/public/Admin/Status/?status=success');
             exit;
         } else {
@@ -72,15 +72,15 @@ class AdminHandler
 
     protected function actionDelete()
     {
-        if( !isset( $_GET['id'] ) || empty( $_GET['id'] ) ){
+        if(!isset($_GET['id']) || empty($_GET['id'])){
             header('Location: http://learn-php2.local/fourth-lesson/public/Admin/Status/?status=error');
             exit;
         }
 
-        $article = Article::findById( $_GET['id'] );
+        $article = Article::findById($_GET['id']);
         $article = $article[0];
 
-        if (  $article->delete() ) {
+        if ( $article->delete()) {
             header('Location: http://learn-php2.local/fourth-lesson/public/Admin/Status/?status=success');
             exit;
         } else {

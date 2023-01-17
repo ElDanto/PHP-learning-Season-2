@@ -15,9 +15,9 @@ class View
      * @param  mixed $template
      * @return void
      */
-    public function display( string $template )
+    public function display(string $template)
     {
-        if ( !empty( $this->data ) ) {
+        if (!empty($this->data)) {
             $data = $this->data;
             include $template;
         }
@@ -29,9 +29,9 @@ class View
      * @param  mixed $template
      * @return void
      */
-    public function render( string $template )
+    public function render(string $template)
     {
-        if ( !empty( $this->data ) ) {
+        if (!empty($this->data)) {
             ob_start();
 
             $data = $this->data;

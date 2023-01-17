@@ -12,8 +12,8 @@ class Auth
     public static function checkAdmin() : bool
     {   
         session_start();
-        if ( isset( $_SESSION['id'] ) ) {
-            if ( md5( '1' ) == $_SESSION['id'] ){
+        if (isset($_SESSION['id'])) {
+            if (md5('1') == $_SESSION['id']){
                 return true;
             }
         }
@@ -22,16 +22,16 @@ class Auth
 
     public function actionVerify()
     {
-        if ( !empty( $_POST['email'] ) && !empty( $_POST['password'] )  ) {
-            $user = User::findByEmail( $_POST['email'] );
-            if ( !empty( $user ) ) {
+        if (!empty($_POST['email']) && !empty($_POST['password']) ) {
+            $user = User::findByEmail($_POST['email']);
+            if (!empty($user)) {
                $user = $user[0];
-               if ( password_verify( $_POST['password'], $user->password ) ) {
+               if (password_verify($_POST['password'], $user->password)) {
                     session_start();
-                    $_SESSION['id'] = md5( $user->id );
+                    $_SESSION['id'] = md5($user->id);
                     $_SESSION['email'] = $user->email;
 
-                    if ( self::checkAdmin() ) {
+                    if (self::checkAdmin()) {
                         header("Location: http://learn-php2.local/fourth-lesson/public/Admin/");
                         exit;
                     }
@@ -45,7 +45,7 @@ class Auth
     public function actionLogin()
     {
         $this->view->login = ['login']; //Заглушка
-        $this->view->display( __DIR__ . '/../../templates/login.php' );
+        $this->view->display(__DIR__ . '/../../templates/login.php');
     }
 
     public function actionLogout()
